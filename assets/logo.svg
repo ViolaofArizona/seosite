@@ -30,6 +30,8 @@
     <line x1="-11" y1="-4" x2="-20" y2="-8"/>
   </g>
   
-  <!-- "BENEFITS GROUP" in blue -->
-  <text x="28" y="103" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#2E86C1" letter-spacing="5">BENEFITS GROUP</text>
+  <!-- "BENEFITS" in blue, "GROUP" in green -->
+  <text x="28" y="103" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="5">
+    <tspan fill="#2E86C1">BENEFITS </tspan><tspan fill="#3BB54A">GROUP</tspan>
+  </text>
 </svg>
