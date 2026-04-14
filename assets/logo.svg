@@ -26,8 +26,8 @@
   <!-- "rise" text in green -->
   <text x="18" y="72" font-family="'Nunito', 'Segoe UI', Arial, sans-serif" font-size="68" font-weight="800" fill="#3BB54A" letter-spacing="-1">rise</text>
   
-  <!-- "up" text in blue -->
-  <text x="182" y="72" font-family="'Nunito', 'Segoe UI', Arial, sans-serif" font-size="68" font-weight="400" fill="#2E86C1" letter-spacing="-1">up</text>
+  <!-- "up" text in blue — raised higher and closer -->
+  <text x="162" y="58" font-family="'Nunito', 'Segoe UI', Arial, sans-serif" font-size="68" font-weight="400" fill="#2E86C1" letter-spacing="-1">up</text>
   
   <!-- "BENEFITS GROUP" text in blue -->
   <text x="52" y="102" font-family="'Nunito', 'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#2E86C1" letter-spacing="5">BENEFITS GROUP</text>
