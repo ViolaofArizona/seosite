@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Backoffice | Rise Up Benefits Group</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="backoffice.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2312A26A'/><text y='.9em' x='50%' text-anchor='middle' font-size='60' fill='white' font-family='sans-serif' font-weight='bold'>R</text></svg>">
+</head>
+<body>
+  <div class="bo-layout">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="bo-sidebar" id="sidebar">
+      <div class="bo-sidebar-header">
+        <a href="index.html" class="bo-sidebar-logo">
+          <div class="bo-sidebar-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div>
+            <div class="bo-sidebar-logo-text">Rise Up <span>Benefits</span></div>
+            <span class="bo-sidebar-label">SEO Backoffice</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="bo-sidebar-nav">
+        <div class="bo-nav-section">
+          <div class="bo-nav-section-title">Audit</div>
+          <button class="bo-nav-link active" data-panel="panel-audit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            SEO Audit
+          </button>
+        </div>
+
+        <div class="bo-nav-section">
+          <div class="bo-nav-section-title">AI SEO Tools</div>
+          <button class="bo-nav-link" data-panel="panel-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Meta Generator
+          </button>
+          <button class="bo-nav-link" data-panel="panel-optimizer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            Content Optimizer
+          </button>
+          <button class="bo-nav-link" data-panel="panel-keywords">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            Keyword Analyzer
+          </button>
+          <button class="bo-nav-link" data-panel="panel-schema">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Schema Builder
+          </button>
+        </div>
+
+        <div class="bo-nav-section">
+          <div class="bo-nav-section-title">Data</div>
+          <button class="bo-nav-link" data-panel="panel-reports">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+            Reports & History
+          </button>
+        </div>
+      </nav>
+
+      <div class="bo-sidebar-footer">
+        <a href="index.html" class="bo-back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Website
+        </a>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="bo-main">
+      <header class="bo-topbar">
+        <h1 class="bo-topbar-title" id="topbar-title">SEO Audit</h1>
+        <div class="bo-topbar-actions">
+          <span style="font-size:0.8rem;color:var(--bo-text-dim);">Rise Up Benefits Group</span>
+        </div>
+      </header>
+
+      <div class="bo-content">
+
+        <!-- ===== AUDIT PANEL ===== -->
+        <div class="bo-panel active" id="panel-audit">
+          <div style="text-align:center;margin-bottom:32px;">
+            <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:8px;">Comprehensive SEO Audit</h2>
+            <p style="color:var(--bo-text-muted);max-width:500px;margin:0 auto 24px;">Analyze your website's SEO health across 9 categories with actionable recommendations.</p>
+            <button class="bo-btn bo-btn-primary bo-btn-lg" id="run-audit-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              Run SEO Audit
+            </button>
+          </div>
+
+          <div id="audit-results" style="display:none;">
+            <div class="score-gauge-container">
+              <div class="score-gauge" id="score-gauge">
+                <div class="score-gauge-inner">
+                  <div class="score-gauge-number" id="score-number">0</div>
+                  <div class="score-gauge-label">SEO Score</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stats-row" id="audit-stats"></div>
+
+            <div class="bo-card" style="margin-bottom:24px;">
+              <div class="bo-card-header">
+                <div class="bo-card-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
+                  Category Scores
+                </div>
+              </div>
+              <div class="category-grid" id="category-grid"></div>
+            </div>
+
+            <div class="bo-card">
+              <div class="bo-card-header">
+                <div class="bo-card-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  Issues Found
+                </div>
+              </div>
+              <table class="issues-table">
+                <thead>
+                  <tr>
+                    <th>Severity</th>
+                    <th>Category</th>
+                    <th>Issue</th>
+                    <th>Recommended Fix</th>
+                  </tr>
+                </thead>
+                <tbody id="issues-tbody"></tbody>
+              </table>
+            </div>
+
+            <!-- Auto-Fix Section -->
+            <div class="bo-card autofix-card" id="autofix-section" style="display:none;margin-top:24px;">
+              <div class="bo-card-header">
+                <div class="bo-card-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                  AI Auto-Fix
+                </div>
+                <button class="bo-btn bo-btn-primary" id="autofix-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                  ✨ Fix All Issues Automatically
+                </button>
+              </div>
+              <p style="color:var(--bo-text-muted);font-size:0.85rem;margin-bottom:16px;">
+                One click to automatically fix all detected SEO issues. The AI engine will optimize your title, meta description, headings, images, links, accessibility, and more — then give you a download of the fixed file.
+              </p>
+              <div id="autofix-log" style="display:none;"></div>
+              <div id="autofix-result" style="display:none;"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== META GENERATOR ===== -->
+        <div class="bo-panel" id="panel-meta">
+          <div class="ai-tool-card">
+            <div class="ai-tool-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              AI Meta Tag Generator
+            </div>
+            <p class="ai-tool-desc">Generate optimized title tags, meta descriptions, and keywords for any topic. Provides 3 variations to choose from.</p>
+
+            <div class="grid-2">
+              <div>
+                <div class="bo-form-group">
+                  <label>Page Topic / Service</label>
+                  <input class="bo-input" id="meta-topic" placeholder="e.g., Medicare Advantage Plans">
+                </div>
+                <div class="bo-form-group">
+                  <label>Business Name</label>
+                  <input class="bo-input" id="meta-business" value="Rise Up Benefits Group">
+                </div>
+                <div class="bo-form-group">
+                  <label>Location</label>
+                  <input class="bo-input" id="meta-location" value="Chandler, AZ">
+                </div>
+                <button class="bo-btn bo-btn-primary" id="generate-meta-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  Generate Meta Tags
+                </button>
+              </div>
+              <div class="output-box" id="meta-output" style="margin-top:0;">
+                <pre style="color:var(--bo-text-dim);">Generated meta tags will appear here...</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== CONTENT OPTIMIZER ===== -->
+        <div class="bo-panel" id="panel-optimizer">
+          <div class="ai-tool-card">
+            <div class="ai-tool-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              AI Content Optimizer
+            </div>
+            <p class="ai-tool-desc">Paste your content to get readability scores, keyword density analysis, and optimization suggestions.</p>
+
+            <div class="bo-form-group">
+              <label>Content to Analyze</label>
+              <textarea class="bo-textarea" id="content-input" rows="8" placeholder="Paste your page content or marketing copy here..."></textarea>
+            </div>
+            <button class="bo-btn bo-btn-primary" id="optimize-content-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              Analyze Content
+            </button>
+
+            <div id="content-output" style="margin-top:24px;"></div>
+          </div>
+        </div>
+
+        <!-- ===== KEYWORD ANALYZER ===== -->
+        <div class="bo-panel" id="panel-keywords">
+          <div class="ai-tool-card">
+            <div class="ai-tool-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              Keyword Analyzer
+            </div>
+            <p class="ai-tool-desc">Analyze keyword frequency, density, and prominence in your content. Check if your target keyword is well-optimized.</p>
+
+            <div class="grid-2">
+              <div>
+                <div class="bo-form-group">
+                  <label>Target Keyword (optional)</label>
+                  <input class="bo-input" id="target-keyword" placeholder="e.g., medicare insurance">
+                </div>
+                <div class="bo-form-group">
+                  <label>Content to Analyze</label>
+                  <textarea class="bo-textarea" id="keyword-input" rows="8" placeholder="Paste content here..."></textarea>
+                </div>
+                <button class="bo-btn bo-btn-primary" id="analyze-keywords-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  Analyze Keywords
+                </button>
+              </div>
+              <div id="keyword-output">
+                <div class="empty-state">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <h3>No Analysis Yet</h3>
+                  <p>Enter content and click analyze to see keyword data.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SCHEMA BUILDER ===== -->
+        <div class="bo-panel" id="panel-schema">
+          <div class="ai-tool-card">
+            <div class="ai-tool-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              JSON-LD Schema Builder
+            </div>
+            <p class="ai-tool-desc">Build structured data markup for your site. Select a type, fill in the fields, and copy the generated JSON-LD.</p>
+
+            <div class="grid-2">
+              <div>
+                <div class="bo-form-group">
+                  <label>Schema Type</label>
+                  <select class="bo-select" id="schema-type">
+                    <option value="">Select a type...</option>
+                    <option value="LocalBusiness" selected>LocalBusiness</option>
+                    <option value="FAQPage">FAQPage</option>
+                    <option value="Product">Product / Service</option>
+                  </select>
+                </div>
+                <div id="schema-fields"></div>
+                <div style="display:flex;gap:12px;margin-top:16px;">
+                  <button class="bo-btn bo-btn-primary" id="generate-schema-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    Generate Schema
+                  </button>
+                  <button class="bo-btn bo-btn-secondary bo-btn-sm" id="schema-copy-btn" style="display:none;">
+                    Copy JSON
+                  </button>
+                </div>
+              </div>
+              <div class="schema-output" id="schema-output">
+                <code style="color:var(--bo-text-dim);">Generated JSON-LD will appear here...</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== REPORTS ===== -->
+        <div class="bo-panel" id="panel-reports">
+          <div class="bo-card">
+            <div class="bo-card-header">
+              <div class="bo-card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+                Audit History
+              </div>
+              <div style="display:flex;gap:8px;">
+                <button class="bo-btn bo-btn-secondary bo-btn-sm" id="export-report-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Export JSON
+                </button>
+                <button class="bo-btn bo-btn-ghost bo-btn-sm" id="clear-history-btn">Clear</button>
+              </div>
+            </div>
+            <div id="report-history"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu toggle -->
+  <button class="bo-mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+
+  <script src="backoffice.js"></script>
+</body>
+</html>

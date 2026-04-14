@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Skills repo (not part of the site)
+.agents/
+
+# Dev notes
+Claude.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+.vercel/
