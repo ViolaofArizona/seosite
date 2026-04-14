@@ -330,16 +330,11 @@ p {
   color: var(--color-primary);
 }
 
-.nav-logo-icon {
-  width: 40px;
+.nav-logo-img {
   height: 40px;
-  background: var(--color-accent);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  flex-shrink: 0;
+  width: auto;
+  display: block;
+  border-radius: var(--radius-sm);
 }
 
 .nav-logo-text span {
