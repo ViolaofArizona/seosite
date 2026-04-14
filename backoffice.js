@@ -1021,37 +1021,75 @@ class AutoFixer {
   }
 
   fixHeadings() {
-    // Parse and check for multiple H1s
+    let fixed = 0;
+
+    // Fix 1: Multiple H1s → keep first, convert rest to H2
     const h1Matches = this.html.match(/<h1[^>]*>.*?<\/h1>/gis);
     if (h1Matches && h1Matches.length > 1) {
-      // Keep only the first H1, convert others to H2
       let firstFound = false;
       this.html = this.html.replace(/<h1([^>]*)>(.*?)<\/h1>/gis, (match, attrs, content) => {
-        if (!firstFound) {
-          firstFound = true;
-          return match;
-        }
+        if (!firstFound) { firstFound = true; return match; }
+        fixed++;
         return `<h2${attrs}>${content}</h2>`;
       });
-      return { applied: true, detail: `Converted ${h1Matches.length - 1} extra H1(s) to H2` };
     }
 
+    // Fix 2: Missing H1 → promote first H2
     if (!h1Matches || h1Matches.length === 0) {
-      // Find first H2 and promote to H1
       if (/<h2[^>]*>/i.test(this.html)) {
         let promoted = false;
         this.html = this.html.replace(/<h2([^>]*)>(.*?)<\/h2>/is, (match, attrs, content) => {
-          if (!promoted) {
-            promoted = true;
-            return `<h1${attrs}>${content}</h1>`;
-          }
+          if (!promoted) { promoted = true; fixed++; return `<h1${attrs}>${content}</h1>`; }
           return match;
         });
-        return { applied: true, detail: 'Promoted first H2 to H1' };
       }
     }
 
-    return { applied: false, detail: 'Heading structure looks good' };
+    // Fix 3: Skipped heading levels (H2 → H4 should be H2 → H3)
+    // Track the last heading level seen and fix any that skip
+    let lastLevel = 0;
+    const headingRegex = /<(h[1-6])([^>]*)>(.*?)<\/\1>/gis;
+    const headings = [];
+    let match;
+
+    // Collect all headings with positions
+    while ((match = headingRegex.exec(this.html)) !== null) {
+      headings.push({
+        full: match[0],
+        tag: match[1],
+        level: parseInt(match[1][1]),
+        attrs: match[2],
+        content: match[3],
+        index: match.index
+      });
+    }
+
+    // Find skipped levels and build replacements
+    lastLevel = 0;
+    const replacements = [];
+    for (const h of headings) {
+      if (lastLevel > 0 && h.level > lastLevel + 1) {
+        const correctLevel = lastLevel + 1;
+        replacements.push({
+          from: h.full,
+          to: `<h${correctLevel}${h.attrs}>${h.content}</h${correctLevel}>`,
+          oldLevel: h.level,
+          newLevel: correctLevel
+        });
+        lastLevel = correctLevel;
+        fixed++;
+      } else {
+        lastLevel = h.level;
+      }
+    }
+
+    // Apply replacements (reverse order to preserve positions)
+    for (const r of replacements.reverse()) {
+      this.html = this.html.replace(r.from, r.to);
+    }
+
+    if (fixed === 0) return { applied: false, detail: 'Heading structure looks good' };
+    return { applied: true, detail: `Fixed ${fixed} heading level issue(s) for proper hierarchy` };
   }
 
   fixImageAlt() {
