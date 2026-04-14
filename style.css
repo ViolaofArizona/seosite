@@ -335,6 +335,7 @@ p {
   width: auto;
   display: block;
   border-radius: var(--radius-sm);
+  padding-bottom: 8px;
 }
 
 .nav-logo-text span {
