@@ -613,6 +613,50 @@ p {
   flex-shrink: 0;
 }
 
+/* ---------- Carrier Logos Strip ---------- */
+.carriers {
+  padding: var(--space-12) 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.carriers-label {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted-light);
+  margin-bottom: var(--space-6);
+}
+
+.carriers-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carriers-strip img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  opacity: 0.75;
+  filter: grayscale(20%);
+  transition: opacity var(--transition-base), filter var(--transition-base);
+}
+
+.carriers-strip img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+  .carriers-strip img {
+    max-width: 100%;
+  }
+}
+
 /* ---------- Services Section ---------- */
 .services {
   padding: var(--space-24) 0;
