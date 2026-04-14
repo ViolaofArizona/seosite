@@ -899,6 +899,7 @@ p {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .testimonial-stars {
@@ -920,6 +921,9 @@ p {
   line-height: 1.7;
   margin-bottom: var(--space-6);
   font-style: italic;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .testimonial-author {
