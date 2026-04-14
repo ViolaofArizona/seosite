@@ -331,7 +331,7 @@ p {
 }
 
 .nav-logo-img {
-  height: 40px;
+  height: 60px;
   width: auto;
   display: block;
   border-radius: var(--radius-sm);
